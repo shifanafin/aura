@@ -1,4 +1,5 @@
 import React from 'react'
+
 type productCardProps = {title:string,price:number,imageUrl:string}
 
 
