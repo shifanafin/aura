@@ -6,6 +6,8 @@ import SearchInput from "@/components/SearchInput";
 import ProductCard from "@/components/product/ProductCard";
 
 import Pagination from "@/components/Pagination";
+import LoginPage from "@/login/page";
+import LogOutPage from "@/logout/page";
 type Props = {
   products: any[];
 };
@@ -44,6 +46,7 @@ const pageSize = 6;
         totalPages={totalPages}
         onPageChange={setPage}
       />
+    
     </>
   );
 }
