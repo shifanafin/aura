@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-// @ts-ignore: allow side-effect CSS import in Next.js app directory (no type declarations for .css)
-import "./globals.css";
+import {Inter} from 'next/font/google'
+import { Toaster } from "sonner";
+import './globals.css';
+import { ErrorBoundary } from "react-error-boundary";
+import { ReactQueryProvider } from "@/provider/ReactQueryProvider";
 
 
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Aura",
   description: "Ecommerce Application using AURA",
+  openGraph: {},
+  metadataBase: new URL("https://shifana.vercel.app/"),
 };
 
 export default function RootLayout({
@@ -17,8 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
-        {children}
+      <body className={inter.className}>
+        <ReactQueryProvider>
+          <ErrorBoundary fallback={<div>Something went wrong!</div>}>
+            {children}
+            <Toaster position="bottom-right" />
+          </ErrorBoundary>
+        </ReactQueryProvider>
       </body>
     </html>
   );              
