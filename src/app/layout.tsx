@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   description: "Ecommerce Application using AURA",
   openGraph: {},
   metadataBase: new URL("https://shifana.vercel.app/"),
+
+};
+
+export type layoutRoutes = "home" | "skills" | "portfolio";
+export type paramsType = {
+  home: {};
+  skills: {};
+  portfolio: {};
 };
 
 export default function RootLayout({
