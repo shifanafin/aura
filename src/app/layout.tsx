@@ -4,7 +4,7 @@ import { Toaster } from "sonner";
 import './globals.css';
 import { ErrorBoundary } from "react-error-boundary";
 import { ReactQueryProvider } from "@/provider/ReactQueryProvider";
-
+import { cn } from "./lib/utils";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.className, 'antialiased')}>
         <ReactQueryProvider>
           <ErrorBoundary fallback={<div>Something went wrong!</div>}>
             {children}
