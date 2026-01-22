@@ -4,10 +4,18 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import type { Experience } from '../types';
 
 export function Experience() {
-  const experiences = [
+  const experiences :Experience[]= [
     { company: 'Company A', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company b', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company c', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company d', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company e', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company f', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company g', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
+    { company: 'Company h', logo: '/images/company-a.png', role: 'Developer', period: '2024-2026', description: 'Built apps.' },
   ];
 
   return (
