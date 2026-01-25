@@ -8,7 +8,8 @@ export interface Experience {
   logo: string;
   role: string;
   period: string;
-  description: string;
+  description: string[];
+  location: string;
 }
 
 export interface Project {
