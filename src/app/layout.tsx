@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { ErrorBoundary } from "react-error-boundary";
-import { ReactQueryProvider } from "@/app/provider/ReactQueryProvider";
+import { ReactQueryProvider } from "@/provider/ReactQueryProvider";
 import { cn } from "./lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
