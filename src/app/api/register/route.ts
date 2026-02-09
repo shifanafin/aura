@@ -16,7 +16,10 @@ export async function POST(req: Request) {
 
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
-      return NextResponse.json({ message: "Email already exists" }, { status: 409 });
+      return NextResponse.json(
+        { message: "Email already exists" },
+        { status: 409 },
+      );
     }
 
     const passwordHash = await bcrypt.hash(password, 10);
@@ -26,11 +29,14 @@ export async function POST(req: Request) {
         email,
         name,
         passwordHash,
-        role: "ADMIN", // or "USER" — change as needed
+        role: "ADMIN",
       },
     });
 
-    return NextResponse.json({ message: "User created", userId: user.id }, { status: 201 });
+    return NextResponse.json(
+      { message: "User created", userId: user.id },
+      { status: 201 },
+    );
   } catch (error) {
     console.error(error);
     return NextResponse.json({ message: "Internal error" }, { status: 500 });

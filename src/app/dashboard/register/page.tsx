@@ -41,7 +41,8 @@ export default function RegisterPage() {
       }
 
       toast.success("Account created! Please log in.");
-      router.push("/login");
+      router.push("/dashboard/login");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       toast.error(err.message);
     }
@@ -80,7 +81,7 @@ export default function RegisterPage() {
 
       <p className="mt-4 text-center">
         Already have an account?{" "}
-        <a href="/login" className="text-blue-600">
+        <a href="/dashboard/login" className="text-blue-600">
           Login
         </a>
       </p>
