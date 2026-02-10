@@ -82,7 +82,7 @@ export default function LoginPage() {
 
       <p className="mt-4 text-center">
         No account?{" "}
-        <a href="/register" className="text-blue-600">
+        <a href="/dashboard/register" className="text-blue-600">
           Register
         </a>
       </p>

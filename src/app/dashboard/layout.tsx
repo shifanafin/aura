@@ -1,17 +1,16 @@
-// src/app/(dashboard)/layout.tsx
-import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/dashboard/app-sidebar";
-import { DashboardHeader } from "@/components/dashboard/dashboard-header";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Aura Portfolio",
+  description: "Personal portfolio with admin dashboard",
+};
 export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
-
   // 1. Check if logged in
   //   if (!session?.user) {
   //     redirect("/dashboard/login");
@@ -23,21 +22,6 @@ export default async function DashboardLayout({
   // }
 
   return (
-    <SidebarProvider>
-      <div className="flex h-screen">
-        {/* Beautiful Sidebar */}
-        <AppSidebar />
-
-        <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Top Header with User Info + Logout */}
-          {/* <DashboardHeader user={session.user} /> */}
-
-          {/* Main Content Area */}
-          <main className="flex-1 overflow-y-auto bg-background p-6">
-            {children}
-          </main>
-        </div>
-      </div>
-    </SidebarProvider>
+    <main className="flex-1 overflow-y-auto bg-background p-6">{children}</main>
   );
 }
